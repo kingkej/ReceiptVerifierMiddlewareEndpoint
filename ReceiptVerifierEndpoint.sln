@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptVerifierEndpoint", "ReceiptVerifierEndpoint\ReceiptVerifierEndpoint.csproj", "{8EAD6645-46DF-4D5B-8849-06368D5208A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiptVerifierEndpoint.Tests", "ReceiptVerifierEndpoint.Tests\ReceiptVerifierEndpoint.Tests.csproj", "{31C0CBA0-0F68-406E-A178-9DA0C04B486F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EAD6645-46DF-4D5B-8849-06368D5208A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EAD6645-46DF-4D5B-8849-06368D5208A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EAD6645-46DF-4D5B-8849-06368D5208A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EAD6645-46DF-4D5B-8849-06368D5208A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C0CBA0-0F68-406E-A178-9DA0C04B486F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C0CBA0-0F68-406E-A178-9DA0C04B486F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C0CBA0-0F68-406E-A178-9DA0C04B486F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C0CBA0-0F68-406E-A178-9DA0C04B486F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
