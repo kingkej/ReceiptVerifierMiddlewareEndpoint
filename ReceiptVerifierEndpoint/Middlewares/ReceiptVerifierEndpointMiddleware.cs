@@ -1,10 +1,9 @@
-﻿using System.Text;
-using System.Text.Json;
-using ReceiptVerifierEndpoint.Models;
+﻿using System.Text.Json;
 using AppleReceiptVerifierNET;
 using Microsoft.Extensions.Options;
+using ReceiptVerifierEndpoint.Models;
 
-namespace ReceiptVerifierEndpoint.Middlewares;
+namespace ReceiptVerifierMiddlewareEndpoint.Middlewares;
 
 public class ReceiptVerifierEndpointMiddleware
 {
@@ -27,8 +26,8 @@ public class ReceiptVerifierEndpointMiddleware
             var body = await JsonSerializer.DeserializeAsync<ReceiptDto>(context.Request.Body, 
                 SerializerOptions);
             if (body == null)
-            {
-                
+            { 
+                context.Response.StatusCode = 400;
             }
             else
             {

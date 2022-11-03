@@ -1,4 +1,4 @@
-namespace ReceiptVerifierEndpoint;
+namespace ReceiptVerifierMiddlewareEndpoint;
 
 public class ReceiptVerifierMiddlewareOptions
 {

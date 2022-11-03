@@ -1,12 +1,13 @@
-using ReceiptVerifierEndpoint.Middlewares;
 using AppleReceiptVerifierNET;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using ReceiptVerifierEndpoint;
+using ReceiptVerifierMiddlewareEndpoint.Middlewares;
 
-namespace ReceiptVerifierEndpoint;
+namespace ReceiptVerifierMiddlewareEndpoint;
 
 public static class HostingExtensions
 {
-    public static IServiceCollection AddApnsVerifierEndpoint(this IServiceCollection srv,
+    public static IServiceCollection AddReceiptVerifierEndpointMiddleware(this IServiceCollection srv,
         Action<ReceiptVerifierMiddlewareOptions> configureEndpoint, Action<AppleReceiptVerifierOptions>? configureVerifier = null)
     {
         srv.AddOptions<ReceiptVerifierMiddlewareOptions>()
@@ -18,11 +19,11 @@ public static class HostingExtensions
         return srv;
     }
 
-    public static IApplicationBuilder UseApnsVerifierEndpoint(this IApplicationBuilder app)
+    public static IApplicationBuilder UseReceiptVerifierEndpointMiddleware(this IApplicationBuilder app)
     {
         var verifier = app.ApplicationServices.GetService<IAppleReceiptVerifier>();
         if (verifier == null)
-            throw new InvalidOperationException("а кто регать верифаер будет");
+            throw new InvalidOperationException("AppleReceiptVerifier not registered.");
         
         return app.UseMiddleware<ReceiptVerifierEndpointMiddleware>();
     }

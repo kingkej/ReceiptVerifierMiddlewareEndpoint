@@ -5,7 +5,8 @@ using AppleReceiptVerifierNET.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Moq;
-using ReceiptVerifierEndpoint.Middlewares;
+using ReceiptVerifierMiddlewareEndpoint;
+using ReceiptVerifierMiddlewareEndpoint.Middlewares;
 using Environment = AppleReceiptVerifierNET.Models.Environment;
 
 namespace ReceiptVerifierEndpoint.Tests;
