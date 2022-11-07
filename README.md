@@ -7,7 +7,7 @@ ReceiptVerifierMiddlewareEndpoint is a library used to add an endpoint to verify
 Use the package manager [NuGet](https://www.nuget.org/packages/ReceiptVerifierMiddlewareEndpoint) to install library.
 
 ```bash
-NuGet\Install-Package ReceiptVerifierMiddlewareEndpoint -Version 1.0.1
+Install-Package ReceiptVerifierMiddlewareEndpoint -Version 1.0.1
 ```
 
 ## ⚙️  Configuration
