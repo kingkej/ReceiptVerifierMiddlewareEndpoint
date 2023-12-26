@@ -8,14 +8,12 @@ namespace ReceiptVerifierMiddlewareEndpoint.Middlewares;
 public class ReceiptVerifierEndpointMiddleware
 {
     private readonly RequestDelegate _next;
-    readonly IAppleReceiptVerifier _receiptVerifier;
     private readonly ReceiptVerifierMiddlewareOptions _options;
     private static readonly JsonSerializerOptions SerializerOptions = new(JsonSerializerDefaults.Web);
 
-    public ReceiptVerifierEndpointMiddleware(RequestDelegate next, IAppleReceiptVerifier receiptVerifier, IOptions<ReceiptVerifierMiddlewareOptions> options)
+    public ReceiptVerifierEndpointMiddleware(RequestDelegate next, IOptions<ReceiptVerifierMiddlewareOptions> options)
     {
         _next = next;
-        _receiptVerifier = receiptVerifier;
         _options = options.Value;
     }
 
@@ -23,15 +21,19 @@ public class ReceiptVerifierEndpointMiddleware
     {
         if (context.Request.Path.Equals(_options.Path, StringComparison.InvariantCultureIgnoreCase))
         {
-            var body = await JsonSerializer.DeserializeAsync<ReceiptDto>(context.Request.Body, 
+            var body = await JsonSerializer.DeserializeAsync<ReceiptDto>(context.Request.Body,
                 SerializerOptions);
             if (body == null)
-            { 
+            {
                 context.Response.StatusCode = 400;
             }
             else
             {
-                var receiptInfo = await _receiptVerifier.VerifyReceiptAsync(body.Receipt);
+                IAppleReceiptVerifier verifier = _options.VerifierName == null
+                    ? context.RequestServices.GetRequiredService<IAppleReceiptVerifier>()
+                    : context.RequestServices.GetRequiredService<IAppleReceiptVerifierResolver>()
+                        .Resolve(_options.VerifierName);
+                var receiptInfo = await verifier.VerifyReceiptAsync(body.Receipt);
                 await context.Response.WriteAsync(receiptInfo.RawJson);
             }
         }

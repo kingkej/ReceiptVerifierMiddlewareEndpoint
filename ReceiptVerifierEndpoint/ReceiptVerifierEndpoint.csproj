@@ -1,34 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <OutputType>Library</OutputType>
-        <IsPackable>true</IsPackable>
-        <StaticWebAssetsEnabled>false</StaticWebAssetsEnabled>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<OutputType>Library</OutputType>
+		<IsPackable>true</IsPackable>
+		<StaticWebAssetsEnabled>false</StaticWebAssetsEnabled>
+	</PropertyGroup>
 
-    <PropertyGroup>
-        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-        <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
-        <Copyright>Copyright © kej 2022</Copyright>
-        <Description>ReceiptVerifierMiddleware adds an endpoint to retrieve receipt info via AppleReceiptVerifier.NET</Description>
-        <Company>kej</Company>
-        <Authors>kej</Authors>
-        <Version>1.0.1</Version>
-        <PackageReleaseNotes>
-      </PackageReleaseNotes>
-        <PackageTags>App Store, in-app purchase, in-app subscription, verify receipt</PackageTags>
-        <RepositoryUrl>https://github.com/kingkej/ReceiptVerifierMiddlewareEndpoint</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <PackageProjectUrl>https://github.com/kingkej/ReceiptVerifierMiddlewareEndpoint</PackageProjectUrl>
-        <PackageId>ReceiptVerifierMiddlewareEndpoint</PackageId>
-        <RootNamespace>ReceiptVerifierMiddlewareEndpoint</RootNamespace>
-      </PropertyGroup>
+	<PropertyGroup>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+		<Copyright>Copyright © kej 2022</Copyright>
+		<Description>ReceiptVerifierMiddleware adds an endpoint to retrieve receipt info via AppleReceiptVerifier.NET</Description>
+		<Company>kej</Company>
+		<Authors>kej</Authors>
+		<Version>1.2.3</Version>
+		<PackageReleaseNotes>Allowed using named verifiers.</PackageReleaseNotes>
+		<PackageTags>App Store, in-app purchase, in-app subscription, verify receipt</PackageTags>
+		<RepositoryUrl>https://github.com/kingkej/ReceiptVerifierMiddlewareEndpoint</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectUrl>https://github.com/kingkej/ReceiptVerifierMiddlewareEndpoint</PackageProjectUrl>
+		<PackageId>ReceiptVerifierMiddlewareEndpoint</PackageId>
+		<RootNamespace>ReceiptVerifierMiddlewareEndpoint</RootNamespace>
+	</PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="AppleReceiptVerifier.NET" Version="1.0.1" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AppleReceiptVerifier.NET" Version="1.0.1" />
+	</ItemGroup>
 
 </Project>
